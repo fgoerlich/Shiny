@@ -15,9 +15,12 @@ shinyUI(pageWithSidebar(
       sliderInput('sd2', 'Standard deviation distribution 2', value = 5, min = 1, max = 10, step = 1),
       
       #   Value of the convergence index
-      hr(),hr(),
+      br(),br(),
       h4('Value of the convergence index'),
-    	fluidRow(column(6, verbatimTextOutput('index')))
+    	fluidRow(column(6, verbatimTextOutput('index'))),
+      
+    	br(),br(),
+    	helpText(a(href='https://github.com/fgoerlich/Shiny/tree/master/dist_convergence', target='_blank', 'View code'))
     ),
     
     mainPanel(
