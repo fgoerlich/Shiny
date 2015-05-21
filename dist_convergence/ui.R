@@ -1,13 +1,13 @@
+library(markdown)
 library(shiny)
 
-shinyUI(pageWithSidebar(
+shinyUI(navbarPage('Convergence Index',
   
-    headerPanel("Convergence Index"),
-    
+  tabPanel('Distributions',
     sidebarPanel(
       #   Parameters for the 1st distribution
-    	sliderInput('mu1', 'Mean distribution 1', value = 10, min = 10, max = 40, step = 1),
-    	sliderInput('sd1', 'Standard deviation distribution 1', value = 5, min = 1, max = 10, step = 1),
+      sliderInput('mu1', 'Mean distribution 1', value = 10, min = 10, max = 40, step = 1),
+      sliderInput('sd1', 'Standard deviation distribution 1', value = 5, min = 1, max = 10, step = 1),
       br(),br(),
       
       #   Parameters for the 2nd distribution
@@ -16,7 +16,7 @@ shinyUI(pageWithSidebar(
       
       #   Value of the convergence index
       br(),br(),
-      h4('Value of the convergence index'),
+      h5('Value of the convergence index (%)'),
     	fluidRow(column(6, verbatimTextOutput('index'))),
       
     	br(),br(),
@@ -27,5 +27,10 @@ shinyUI(pageWithSidebar(
       h4('Convergence between two distributions as measured by the red area'),
     	plotOutput('density')
     )
-    
+  ),
+  
+  tabPanel('About',
+    includeMarkdown('README.md')
+  )
+  
 ))
