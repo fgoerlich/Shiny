@@ -38,7 +38,7 @@ shinyUI(navbarPage("Census 2011", id="nav",
   tabPanel("Data explorer",
     fluidRow(
       column(3,
-        selectInput("states", "NUTS", c("None"=" ", as.character(cleantable$NUTS)), selected = " ", multiple=FALSE)
+        selectInput("states", "NUTS", c("None"=" ", as.character(cleantable$NUTS)), selected = " ")
       ),      
       column(3,
         conditionalPanel("input.states",
@@ -51,7 +51,9 @@ shinyUI(navbarPage("Census 2011", id="nav",
   ),
   
   tabPanel("About",
-    includeMarkdown('README.md')
+    includeMarkdown('README.md'),
+    br(),
+    helpText(a(href='https://github.com/fgoerlich/Shiny/tree/master/census', target='_blank', 'View code'))
   ),
   
   conditionalPanel("false", icon("crosshair"))

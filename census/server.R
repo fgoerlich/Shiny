@@ -62,7 +62,7 @@ shinyServer(function(input, output, session) {
   session$onFlushed(once=TRUE, function() {
     paintObs  <- observe({
       SelectedVar <- input$var
-      # By ordering by 'input$var' big values will be drawn first for Popups
+      # Ordering by 'input$var' big values will be drawn first, so all Popups can be seen
       LAUdata <- allLAUs[order(allLAUs[SelectedVar],decreasing=TRUE),]
       colors <- brewer.pal(10, "Spectral")[cut(allLAUs[[SelectedVar]], 10, labels = FALSE)]
       colors <- colors[match(LAUdata$Code, allLAUs$Code)]
