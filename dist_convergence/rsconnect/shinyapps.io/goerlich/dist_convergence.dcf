@@ -2,3 +2,4 @@ name: dist_convergence
 account: goerlich
 bundleId: 189580
 url: https://goerlich.shinyapps.io/dist_convergence
+server: shinyapps.io
