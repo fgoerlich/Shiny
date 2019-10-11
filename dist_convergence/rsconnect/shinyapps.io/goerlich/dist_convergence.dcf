@@ -1,5 +1,10 @@
 name: dist_convergence
+title:
+username:
 account: goerlich
-bundleId: 189580
-url: https://goerlich.shinyapps.io/dist_convergence
 server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 43351
+bundleId: 2491505
+url: https://goerlich.shinyapps.io/dist_convergence/
+when: 1570806664.31614
